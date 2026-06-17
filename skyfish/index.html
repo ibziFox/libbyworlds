@@ -935,66 +935,66 @@ h3{font-size:0.95rem;font-weight:700;color:#d8b8e8;margin:1.2rem 0 0.6rem;letter
 <span class="cat-chip">Progression</span>
 <h2>Echo (XP) Progression</h2>
 <p class="section-intro">"Echo" is the in-game XP system. You earn Echo every catch based on the creature's rarity. Max level is <strong>100</strong>.</p>
-<div class="formula"><span style="color:#c8a0e0">xp_threshold</span>(<span style="color:#FF8C1A">L</span>) = <span style="color:#4de64d">100</span> × max(0, <span style="color:#FF8C1A">L</span>−1)^<span style="color:#4de64d">2.3</span><br><span class="comment">// total cumulative XP needed to reach level L</span><br>echo_per_catch[rarity] = [5, 10, 23, 30, 38, 53, 68, 75, 90, 105, 250]</div>
+<div class="formula"><span style="color:#c8a0e0">xp_threshold</span>(<span style="color:#FF8C1A">L</span>) = <span style="color:#4de64d">100</span> × max(0, <span style="color:#FF8C1A">L</span>−1)^<span style="color:#4de64d">2.3</span><br><span class="comment">// total cumulative XP needed to reach level L</span><br><span class="comment">// base_echo = max(2, shardValue × tierRate / 100)  — see table below</span></div>
 <div class="two-col">
 <div>
 <h3>XP Milestones</h3>
 <div class="table-wrap"><table>
-<tr><th>Level</th><th>Total XP Needed</th><th>XP This Level</th><th>Aetheric Catches</th></tr>
-<tr><td><strong>2</strong></td><td>100</td><td>100</td><td class="dim">1</td></tr>
-<tr><td><strong>3</strong></td><td>492</td><td>392</td><td class="dim">4</td></tr>
-<tr><td><strong>4</strong></td><td>1,251</td><td>759</td><td class="dim">8</td></tr>
-<tr><td><strong>5</strong></td><td>2,425</td><td>1,174</td><td class="dim">12</td></tr>
-<tr><td><strong>6</strong></td><td>4,052</td><td>1,627</td><td class="dim">16</td></tr>
-<tr><td><strong>7</strong></td><td>6,162</td><td>2,110</td><td class="dim">21</td></tr>
-<tr><td><strong>8</strong></td><td>8,785</td><td>2,623</td><td class="dim">25</td></tr>
-<tr><td><strong>9</strong></td><td>11,943</td><td>3,158</td><td class="dim">31</td></tr>
-<tr style="background:#1e1030"><td><strong>10</strong></td><td>15,659</td><td>3,716</td><td class="dim">36</td></tr>
-<tr><td><strong>11</strong></td><td>19,953</td><td>4,294</td><td class="dim">41</td></tr>
-<tr><td><strong>12</strong></td><td>24,843</td><td>4,890</td><td class="dim">47</td></tr>
-<tr><td><strong>13</strong></td><td>30,347</td><td>5,504</td><td class="dim">53</td></tr>
-<tr><td><strong>14</strong></td><td>36,481</td><td>6,134</td><td class="dim">59</td></tr>
-<tr><td><strong>15</strong></td><td>43,261</td><td>6,780</td><td class="dim">65</td></tr>
-<tr><td><strong>16</strong></td><td>50,700</td><td>7,439</td><td class="dim">71</td></tr>
-<tr><td><strong>17</strong></td><td>58,813</td><td>8,113</td><td class="dim">78</td></tr>
-<tr><td><strong>18</strong></td><td>67,613</td><td>8,800</td><td class="dim">84</td></tr>
-<tr><td><strong>19</strong></td><td>77,113</td><td>9,500</td><td class="dim">91</td></tr>
-<tr><td><strong>20</strong></td><td>87,324</td><td>10,211</td><td class="dim">98</td></tr>
-<tr style="background:#1e1030"><td><strong>25</strong></td><td>149,447</td><td>13,936</td><td class="dim">133</td></tr>
-<tr><td><strong>30</strong></td><td>230,949</td><td>17,908</td><td class="dim">171</td></tr>
-<tr><td><strong>35</strong></td><td>332,967</td><td>22,095</td><td class="dim">211</td></tr>
-<tr><td><strong>40</strong></td><td>456,508</td><td>26,475</td><td class="dim">253</td></tr>
-<tr style="background:#1e1030"><td><strong>50</strong></td><td>771,704</td><td>35,743</td><td class="dim">341</td></tr>
-<tr><td><strong>60</strong></td><td>1,182,932</td><td>45,608</td><td class="dim">435</td></tr>
-<tr><td><strong>70</strong></td><td>1,695,715</td><td>55,992</td><td class="dim">534</td></tr>
-<tr><td><strong>80</strong></td><td>2,314,954</td><td>66,844</td><td class="dim">637</td></tr>
-<tr><td><strong>90</strong></td><td>3,045,068</td><td>78,119</td><td class="dim">744</td></tr>
-<tr style="background:#1e1030"><td><strong>100</strong></td><td>3,890,102</td><td>89,784</td><td class="dim">856</td></tr>
+<tr><th>Level</th><th>Total XP Needed</th><th>XP This Level</th></tr>
+<tr><td><strong>2</strong></td><td>100</td><td>100</td></tr>
+<tr><td><strong>3</strong></td><td>492</td><td>392</td></tr>
+<tr><td><strong>4</strong></td><td>1,251</td><td>759</td></tr>
+<tr><td><strong>5</strong></td><td>2,425</td><td>1,174</td></tr>
+<tr><td><strong>6</strong></td><td>4,052</td><td>1,627</td></tr>
+<tr><td><strong>7</strong></td><td>6,162</td><td>2,110</td></tr>
+<tr><td><strong>8</strong></td><td>8,785</td><td>2,623</td></tr>
+<tr><td><strong>9</strong></td><td>11,943</td><td>3,158</td></tr>
+<tr style="background:#1e1030"><td><strong>10</strong></td><td>15,659</td><td>3,716</td></tr>
+<tr><td><strong>11</strong></td><td>19,953</td><td>4,294</td></tr>
+<tr><td><strong>12</strong></td><td>24,843</td><td>4,890</td></tr>
+<tr><td><strong>13</strong></td><td>30,347</td><td>5,504</td></tr>
+<tr><td><strong>14</strong></td><td>36,481</td><td>6,134</td></tr>
+<tr><td><strong>15</strong></td><td>43,261</td><td>6,780</td></tr>
+<tr><td><strong>16</strong></td><td>50,700</td><td>7,439</td></tr>
+<tr><td><strong>17</strong></td><td>58,813</td><td>8,113</td></tr>
+<tr><td><strong>18</strong></td><td>67,613</td><td>8,800</td></tr>
+<tr><td><strong>19</strong></td><td>77,113</td><td>9,500</td></tr>
+<tr><td><strong>20</strong></td><td>87,324</td><td>10,211</td></tr>
+<tr style="background:#1e1030"><td><strong>25</strong></td><td>149,447</td><td>13,936</td></tr>
+<tr><td><strong>30</strong></td><td>230,949</td><td>17,908</td></tr>
+<tr><td><strong>35</strong></td><td>332,967</td><td>22,095</td></tr>
+<tr><td><strong>40</strong></td><td>456,508</td><td>26,475</td></tr>
+<tr style="background:#1e1030"><td><strong>50</strong></td><td>771,704</td><td>35,743</td></tr>
+<tr><td><strong>60</strong></td><td>1,182,932</td><td>45,608</td></tr>
+<tr><td><strong>70</strong></td><td>1,695,715</td><td>55,992</td></tr>
+<tr><td><strong>80</strong></td><td>2,314,954</td><td>66,844</td></tr>
+<tr><td><strong>90</strong></td><td>3,045,068</td><td>78,119</td></tr>
+<tr style="background:#1e1030"><td><strong>100</strong></td><td>3,890,102</td><td>89,784</td></tr>
 </table></div>
 </div>
 <div>
 <div class="card">
 <h3>Echo Earned Per Catch</h3>
 <div class="table-wrap"><table>
-<tr><th>Rarity</th><th>Echo / Catch <span style="font-weight:400;color:var(--dim);font-size:0.8em">(normal size)</span></th><th>Catches to Lv 2</th></tr>
-<tr style="background:#1e1820"><td><span class="r0">Basic</span></td><td><span class="pos">+15</span></td><td class="dim">7</td></tr>
-<tr style="background:#1e1820"><td><span class="r1">Common</span></td><td><span class="pos">+36</span></td><td class="dim">3</td></tr>
-<tr style="background:#1a2e1a"><td><span class="r2">Uncommon</span></td><td><span class="pos">+60</span></td><td class="dim">2</td></tr>
-<tr style="background:#142e28"><td><span class="r3">Fine</span></td><td><span class="pos">+82</span></td><td class="dim">2</td></tr>
-<tr style="background:#1e1038"><td><span class="r4">Rare</span></td><td><span class="pos">+80</span></td><td class="dim">2</td></tr>
-<tr style="background:#221038"><td><span class="r5">Epic</span></td><td><span class="pos">+100</span></td><td class="dim">1</td></tr>
-<tr style="background:#2e1808"><td><span class="r6">Legendary</span></td><td><span class="pos">+150</span></td><td class="dim">1</td></tr>
-<tr style="background:#2e0c0c"><td><span class="r7">Mythic</span></td><td><span class="pos">+220</span></td><td class="dim">1</td></tr>
-<tr style="background:#2e2808"><td><span class="r8">Ancient</span></td><td><span class="pos">+800</span></td><td class="dim">1</td></tr>
-<tr style="background:#280e2a"><td><span class="r9">Aetheric</span></td><td><span class="pos">+2,000</span></td><td class="dim">1</td></tr>
-<tr style="background:#1e1430"><td><span class="r10">Obsidian</span></td><td><span class="pos">+75,000</span></td><td class="dim">1</td></tr>
+<tr><th>Rarity</th><th>Echo / Catch <span style="font-weight:400;color:var(--dim);font-size:0.8em">(normal size)</span></th><th>Catches to Lv 100</th></tr>
+<tr style="background:#1e1820"><td><span class="r0">Basic</span></td><td><span class="pos">+15</span></td><td class="dim">259,341</td></tr>
+<tr style="background:#1e1820"><td><span class="r1">Common</span></td><td><span class="pos">+36</span></td><td class="dim">108,059</td></tr>
+<tr style="background:#1a2e1a"><td><span class="r2">Uncommon</span></td><td><span class="pos">+60</span></td><td class="dim">64,836</td></tr>
+<tr style="background:#142e28"><td><span class="r3">Fine</span></td><td><span class="pos">+82</span></td><td class="dim">47,441</td></tr>
+<tr style="background:#1e1038"><td><span class="r4">Rare</span></td><td><span class="pos">+80</span></td><td class="dim">48,627</td></tr>
+<tr style="background:#221038"><td><span class="r5">Epic</span></td><td><span class="pos">+100</span></td><td class="dim">38,902</td></tr>
+<tr style="background:#2e1808"><td><span class="r6">Legendary</span></td><td><span class="pos">+150</span></td><td class="dim">25,935</td></tr>
+<tr style="background:#2e0c0c"><td><span class="r7">Mythic</span></td><td><span class="pos">+220</span></td><td class="dim">17,683</td></tr>
+<tr style="background:#2e2808"><td><span class="r8">Ancient</span></td><td><span class="pos">+800</span></td><td class="dim">4,863</td></tr>
+<tr style="background:#280e2a"><td><span class="r9">Aetheric</span></td><td><span class="pos">+2,000</span></td><td class="dim">1,946</td></tr>
+<tr style="background:#1e1430"><td><span class="r10">Obsidian</span></td><td><span class="pos">+75,000</span></td><td class="dim">52</td></tr>
 </table></div>
 </div>
 <div class="card" style="margin-top:0.75rem">
 <h3>XP Curve</h3>
 <div class="chart-wrap" style="height:auto"><svg viewBox="0 0 660 200" xmlns="http://www.w3.org/2000/svg" style="width:100%;display:block"><defs><linearGradient id="xpGrad" x1="0" y1="0" x2="0" y2="1"><stop offset="0%" stop-color="#c4a0d0" stop-opacity="0.38"/><stop offset="100%" stop-color="#c4a0d0" stop-opacity="0.02"/></linearGradient></defs><line x1="62" y1="164.0" x2="644" y2="164.0" stroke="#1c1c32" stroke-width="1"/><text x="56" y="168.0" text-anchor="end" font-size="10" fill="#555577" font-family="Oxanium,sans-serif">0</text><line x1="62" y1="127.0" x2="644" y2="127.0" stroke="#1c1c32" stroke-width="1"/><text x="56" y="131.0" text-anchor="end" font-size="10" fill="#555577" font-family="Oxanium,sans-serif">22k</text><line x1="62" y1="90.0" x2="644" y2="90.0" stroke="#1c1c32" stroke-width="1"/><text x="56" y="94.0" text-anchor="end" font-size="10" fill="#555577" font-family="Oxanium,sans-serif">44k</text><line x1="62" y1="53.0" x2="644" y2="53.0" stroke="#1c1c32" stroke-width="1"/><text x="56" y="57.0" text-anchor="end" font-size="10" fill="#555577" font-family="Oxanium,sans-serif">67k</text><line x1="62" y1="16.0" x2="644" y2="16.0" stroke="#1c1c32" stroke-width="1"/><text x="56" y="20.0" text-anchor="end" font-size="10" fill="#555577" font-family="Oxanium,sans-serif">89k</text><line x1="109.5" y1="16" x2="109.5" y2="168" stroke="#1c1c32" stroke-width="1"/><text x="109.5" y="178" text-anchor="middle" font-size="10" fill="#555577" font-family="Oxanium,sans-serif">10</text><line x1="168.9" y1="16" x2="168.9" y2="168" stroke="#1c1c32" stroke-width="1"/><text x="168.9" y="178" text-anchor="middle" font-size="10" fill="#555577" font-family="Oxanium,sans-serif">20</text><line x1="228.3" y1="16" x2="228.3" y2="168" stroke="#1c1c32" stroke-width="1"/><text x="228.3" y="178" text-anchor="middle" font-size="10" fill="#555577" font-family="Oxanium,sans-serif">30</text><line x1="287.7" y1="16" x2="287.7" y2="168" stroke="#1c1c32" stroke-width="1"/><text x="287.7" y="178" text-anchor="middle" font-size="10" fill="#555577" font-family="Oxanium,sans-serif">40</text><line x1="347.1" y1="16" x2="347.1" y2="168" stroke="#1c1c32" stroke-width="1"/><text x="347.1" y="178" text-anchor="middle" font-size="10" fill="#555577" font-family="Oxanium,sans-serif">50</text><line x1="406.4" y1="16" x2="406.4" y2="168" stroke="#1c1c32" stroke-width="1"/><text x="406.4" y="178" text-anchor="middle" font-size="10" fill="#555577" font-family="Oxanium,sans-serif">60</text><line x1="465.8" y1="16" x2="465.8" y2="168" stroke="#1c1c32" stroke-width="1"/><text x="465.8" y="178" text-anchor="middle" font-size="10" fill="#555577" font-family="Oxanium,sans-serif">70</text><line x1="525.2" y1="16" x2="525.2" y2="168" stroke="#1c1c32" stroke-width="1"/><text x="525.2" y="178" text-anchor="middle" font-size="10" fill="#555577" font-family="Oxanium,sans-serif">80</text><line x1="584.6" y1="16" x2="584.6" y2="168" stroke="#1c1c32" stroke-width="1"/><text x="584.6" y="178" text-anchor="middle" font-size="10" fill="#555577" font-family="Oxanium,sans-serif">90</text><line x1="644.0" y1="16" x2="644.0" y2="168" stroke="#1c1c32" stroke-width="1"/><text x="644.0" y="178" text-anchor="middle" font-size="10" fill="#555577" font-family="Oxanium,sans-serif">100</text><path d="M 62.0 164 L 62.0 163.8 L 67.9 163.4 L 73.9 162.7 L 79.8 162.1 L 85.8 161.3 L 91.7 160.5 L 97.6 159.7 L 103.6 158.8 L 109.5 157.9 L 115.4 156.9 L 121.4 155.9 L 127.3 154.9 L 133.3 153.9 L 139.2 152.8 L 145.1 151.7 L 151.1 150.6 L 157.0 149.5 L 163.0 148.3 L 168.9 147.2 L 174.8 146.0 L 180.8 144.8 L 186.7 143.5 L 192.7 142.3 L 198.6 141.0 L 204.5 139.8 L 210.5 138.5 L 216.4 137.1 L 222.3 135.8 L 228.3 134.5 L 234.2 133.1 L 240.2 131.8 L 246.1 130.4 L 252.0 129.0 L 258.0 127.6 L 263.9 126.2 L 269.9 124.7 L 275.8 123.3 L 281.7 121.8 L 287.7 120.4 L 293.6 118.9 L 299.6 117.4 L 305.5 115.9 L 311.4 114.4 L 317.4 112.9 L 323.3 111.3 L 329.2 109.8 L 335.2 108.2 L 341.1 106.7 L 347.1 105.1 L 353.0 103.5 L 358.9 101.9 L 364.9 100.3 L 370.8 98.7 L 376.8 97.1 L 382.7 95.4 L 388.6 93.8 L 394.6 92.1 L 400.5 90.5 L 406.4 88.8 L 412.4 87.1 L 418.3 85.5 L 424.3 83.8 L 430.2 82.1 L 436.1 80.4 L 442.1 78.6 L 448.0 76.9 L 454.0 75.2 L 459.9 73.5 L 465.8 71.7 L 471.8 69.9 L 477.7 68.2 L 483.7 66.4 L 489.6 64.6 L 495.5 62.9 L 501.5 61.1 L 507.4 59.3 L 513.3 57.5 L 519.3 55.6 L 525.2 53.8 L 531.2 52.0 L 537.1 50.2 L 543.0 48.3 L 549.0 46.5 L 554.9 44.6 L 560.9 42.7 L 566.8 40.9 L 572.7 39.0 L 578.7 37.1 L 584.6 35.2 L 590.6 33.3 L 596.5 31.4 L 602.4 29.5 L 608.4 27.6 L 614.3 25.7 L 620.2 23.8 L 626.2 21.8 L 632.1 19.9 L 638.1 18.0 L 644.0 16.0 L 644.0 164 Z" fill="url(#xpGrad)"/><polyline points="62.0,163.8 67.9,163.4 73.9,162.7 79.8,162.1 85.8,161.3 91.7,160.5 97.6,159.7 103.6,158.8 109.5,157.9 115.4,156.9 121.4,155.9 127.3,154.9 133.3,153.9 139.2,152.8 145.1,151.7 151.1,150.6 157.0,149.5 163.0,148.3 168.9,147.2 174.8,146.0 180.8,144.8 186.7,143.5 192.7,142.3 198.6,141.0 204.5,139.8 210.5,138.5 216.4,137.1 222.3,135.8 228.3,134.5 234.2,133.1 240.2,131.8 246.1,130.4 252.0,129.0 258.0,127.6 263.9,126.2 269.9,124.7 275.8,123.3 281.7,121.8 287.7,120.4 293.6,118.9 299.6,117.4 305.5,115.9 311.4,114.4 317.4,112.9 323.3,111.3 329.2,109.8 335.2,108.2 341.1,106.7 347.1,105.1 353.0,103.5 358.9,101.9 364.9,100.3 370.8,98.7 376.8,97.1 382.7,95.4 388.6,93.8 394.6,92.1 400.5,90.5 406.4,88.8 412.4,87.1 418.3,85.5 424.3,83.8 430.2,82.1 436.1,80.4 442.1,78.6 448.0,76.9 454.0,75.2 459.9,73.5 465.8,71.7 471.8,69.9 477.7,68.2 483.7,66.4 489.6,64.6 495.5,62.9 501.5,61.1 507.4,59.3 513.3,57.5 519.3,55.6 525.2,53.8 531.2,52.0 537.1,50.2 543.0,48.3 549.0,46.5 554.9,44.6 560.9,42.7 566.8,40.9 572.7,39.0 578.7,37.1 584.6,35.2 590.6,33.3 596.5,31.4 602.4,29.5 608.4,27.6 614.3,25.7 620.2,23.8 626.2,21.8 632.1,19.9 638.1,18.0 644.0,16.0" fill="none" stroke="#c4a0d0" stroke-width="1.8" stroke-linejoin="round"/><text x="353" y="198" text-anchor="middle" font-size="10" fill="#555577" font-family="Oxanium,sans-serif">Level</text></svg></div>
 </div>
-<div class="tip" style="margin-top:0.75rem">To reach level 100 you need <strong>3,890,102 total Echo</strong>. At Aetheric (105 XP each) that's ~37,000 Aetheric catches - or ~78,000 Mythic catches. Daily quests and achievements also award Echo.</div>
+<div class="tip" style="margin-top:0.75rem">To reach level 100 you need <strong>3,890,102 total Echo</strong>. At Aetheric (2,000 XP each) that's ~1,946 Aetheric catches - or ~17,683 Mythic catches (220 XP each). Daily quests and achievements also award Echo.</div>
 </div>
 </div>
 
